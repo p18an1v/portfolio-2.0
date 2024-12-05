@@ -1,0 +1,120 @@
+/* Sidebar Styling */
+.sidebar {
+    font-family: monospace, Courier New, Arial, sans-serif;
+    background-color: #f8f9fa; /* Light background */
+    padding-left: 15px;
+    padding-top: 20px;
+    position: fixed; /* Fixed position */
+    height: 100vh; /* Full height */
+    width: 200px; /* Adjust width as necessary */
+    left: 0; /* Stays fixed at the left */
+    top: 0; /* Stays fixed at the top */
+    z-index: 1000; /* Ensures sidebar stays on top */
+    
+}
+
+/* Main content adjustment */
+.main-content {
+    justify-content: center; /* Centers the main content */
+    padding: 20px;
+    margin-left: 350px; /* Ensures space for sidebar */
+    font-family: monospace, Courier New, Arial, sans-serif; 
+}
+
+/* Navigation link styles */
+.nav-link-custom {
+    font-family: monospace, Courier New, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    padding: 5px 0;
+    text-align: left;
+    padding-left: 5px;
+    transition: color 0.3s ease;
+
+}
+
+.nav-link-custom:hover {
+    color: #ff0000; /* Hover color */
+}
+
+.nav-link-custom:focus, .nav-link-custom.active {
+    font-weight: bold;
+    color: #000;
+}
+
+/* Icon spacing */
+.icon {
+    margin-right: 10px;
+}
+
+
+.download-btn {
+    background-color: black;
+    color: white;
+    border-color: black;
+  }
+  
+  .download-btn:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+  }
+  
+
+/* Media Queries for Mobile */
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    /* Shrink sidebar on mobile */
+    .sidebar {
+        width: 60px; /* Reduce the sidebar width */
+        padding-left: 5px; /* Reduce padding for minimized sidebar */
+    }
+
+    /* Adjust main content margin accordingly */
+    .main-content {
+        margin-left: 80px; /* Less margin for smaller sidebar */
+    }
+
+    /* Hide text in nav links when sidebar is collapsed */
+    .nav-link-custom {
+        font-size: 0; /* Hide text */
+        padding: 0; /* Remove padding */
+    }
+
+    .nav-link-custom::before {
+        content: attr(title); /* Show title as tooltip */
+        font-size: 12px;
+        position: absolute;
+        left: 80px; /* Adjust this depending on the collapsed sidebar size */
+        white-space: nowrap;
+        background: #f8f9fa;
+        padding: 5px;
+        border-radius: 4px;
+        display: none;
+    }
+
+    .nav-link-custom:hover::before {
+        display: block;
+    }
+
+    /* Adjust icons for smaller sidebar */
+    .icon {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Further reduce sidebar for very small screens */
+    .sidebar {
+        width: 50px;
+    }
+
+    .main-content {
+        margin-left: 60px;
+    }
+
+    .icon {
+        font-size: 20px;
+    }
+}
